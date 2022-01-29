@@ -1,7 +1,2 @@
-a = "05"
-print(type(a))
-int(a)
-print(type(a))
-
-print(int(a)*10)
-print(a)
+a = [[1,2],[3,4],[5,6]]
+print(a[-1][1])

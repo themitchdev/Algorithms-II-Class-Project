@@ -21,9 +21,9 @@ class Truck(ChainingHashTable):
         temp_list = []
         final_list = []
         min_distance = 1000
-        for i in range(40):
+        for i in range(41):
 
-            for j in range(1, 40):
+            for j in range(1, 41):
                 if self.search(j) is not None:
                     next = self.search(j)
 
@@ -62,6 +62,11 @@ class Truck(ChainingHashTable):
         distance_to_hub = distance_calc.get_distance(last_address, hub)
         package_list.search(0).set_timestamp(last_timestamp, distance_to_hub)
         Truck.start_time = package_list.search(0).time
+        # print(last_address)
+        # print(last_timestamp)
+        # print(hub)
+        # print(distance_to_hub)
+        # print(package_list.search(0).time)
 
     def deliver(self):
         total_time = self.start_time
@@ -113,19 +118,36 @@ truck1.insert(33, package_list.search(33))
 truck1.insert(35, package_list.search(35))
 truck1.insert(39, package_list.search(39))
 
-truck2 = Truck(11)
+truck2 = Truck(16)
 truck2.insert(0, package_list.search(0))
+truck2.insert(3, package_list.search(3))
+truck2.insert(8, package_list.search(8))
+truck2.insert(30, package_list.search(30))
+truck2.insert(5, package_list.search(5))
+truck2.insert(37, package_list.search(37))
+truck2.insert(38, package_list.search(38))
+truck2.insert(6, package_list.search(6))
+truck2.insert(12, package_list.search(12))
+truck2.insert(17, package_list.search(17))
+truck2.insert(31, package_list.search(31))
+truck2.insert(32, package_list.search(32))
+truck2.insert(36, package_list.search(36))
+truck2.insert(18, package_list.search(18))
 truck2.insert(9, package_list.search(9))
-truck2.insert(1, package_list.search(1))
-truck2.insert(4, package_list.search(4))
-truck2.insert(28, package_list.search(28))
-truck2.insert(40, package_list.search(40))
-truck2.insert(25, package_list.search(25))
-truck2.insert(26, package_list.search(26))
-truck2.insert(34, package_list.search(34))
-truck2.insert(11, package_list.search(11))
-truck2.insert(23, package_list.search(23))
-truck2.insert(22, package_list.search(22))
+
+truck3 = Truck(11)
+truck3.insert(0, package_list.search(0))
+
+truck3.insert(1, package_list.search(1))
+truck3.insert(4, package_list.search(4))
+truck3.insert(28, package_list.search(28))
+truck3.insert(40, package_list.search(40))
+truck3.insert(25, package_list.search(25))
+truck3.insert(26, package_list.search(26))
+truck3.insert(34, package_list.search(34))
+truck3.insert(11, package_list.search(11))
+truck3.insert(23, package_list.search(23))
+truck3.insert(22, package_list.search(22))
 
 truck1.set_start_time("8:00")
 truck1.sort()
@@ -133,22 +155,10 @@ truck1.deliver()
 truck2.set_start_time("9:05")
 truck2.sort()
 truck2.deliver()
+truck1.return_to_hub()
+truck3.sort()
+truck3.deliver()
 
 
-# truck3 = Truck(16)
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
-# truck3.insert(2, package_list.search(1))
 
 

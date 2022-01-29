@@ -76,7 +76,7 @@ class Package(ChainingHashTable):
         END = '\033[0m'
 
     def status_all_packages(self, user_time):
-        for i in range(40):
+        for i in range(1,41):
             if package_list.search(i).time is not None:
                 self.status_one_package(i, user_time)
 
@@ -100,7 +100,8 @@ with open ('packageFile.csv') as file:
 hub = Package(0, "4001 South","","","","","","")
 package_list.insert(0,hub)
 
-
+package_list.search(9).street = "410 S State St"
+package_list.search(9).zipcode = "84111"
 
 
 
